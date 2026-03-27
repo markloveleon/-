@@ -38,6 +38,19 @@ font-size:20px;
 color:red;
 font-weight:bold;
 }
+
+.search-box button{
+padding:15px 30px;
+font-size:20px;
+font-weight:bold;
+min-width:110px;
+border:none;
+border-radius:10px;
+background:#ff4d4d;
+color:white;
+cursor:pointer;
+}
+
 </style>
 
 </head>
@@ -46,11 +59,26 @@ font-weight:bold;
 
 <h1>題庫查詢系統</h1>
 
+<div class="search-box">
+
 <input id="search" placeholder="輸入題號或關鍵字">
+
+<button onclick="clearSearch()">清除</button>
+
+</div>
 
 <div id="results"></div>
 
 <script>
+
+function clearSearch(){
+document.getElementById("search").value="";
+document.getElementById("results").innerHTML="";
+document.getElementById("search").focus();
+}
+
+
+
 
 const questions = [{"id": "01", "question": "在船上施工時，禁止攜帶任何飲料，因為打翻會影響設備與材料。", "answer": "O"}, 
 {"id": "02", "question": "10. 只要船出廠後沒有立即發現問題，即使日後發現損傷，也與施工人員無關。", "answer": "X"}, 
